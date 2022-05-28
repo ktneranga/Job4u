@@ -16,9 +16,9 @@ use App\Models\Listing;
 
 Route::get('/', function () {
     return view('listings', ['headings'=>'Listing headings', 'listings'=>Listing::all()]);
-});
+})->name('listings');
 
 Route::get('/listings/{id}', function($id){
     $listing = Listing::find($id);
     return view('listing', ['listing'=>$listing]);
-});
+})->name('listing');

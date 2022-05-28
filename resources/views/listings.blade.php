@@ -6,7 +6,7 @@
 
     @foreach($listings as $list)
 
-    <h1> {{ $list['title'] }}</h1>
+    <a href="{{ route('listing') }}"><h1> {{ $list['title'] }}</h1></a>
     <p> {{ $list['description'] }}</p>
 
     <?php endforeach; ?>
