@@ -15,7 +15,7 @@ class ListingFactory extends Factory
     {
         return [
             'title'=>$this->faker->sentence(),
-            'tags'=>'laravel, java script',
+            'tags'=>'laravel,javascript,api',
             'company'=>$this->faker->company(),
             'email'=>$this->faker->companyEmail(),
             'website'=>$this->faker->url(),

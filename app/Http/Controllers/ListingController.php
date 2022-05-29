@@ -7,79 +7,25 @@ use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    //show all listing
+    public function index(Request $request)
     {
-        //
+        $listings = Listing::all();
+        return view('listings.index', ['listings'=>$listings]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    //show single listing
+    public function show($id)
     {
-        //
+        $listing = Listing::find($id);
+
+        if($listing){
+            return view('listings.show', ['listing'=>$listing]);
+        }else{
+            return abort(404);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Listing  $listing
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Listing $listing)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Listing  $listing
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Listing $listing)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Listing  $listing
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Listing $listing)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Listing  $listing
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Listing $listing)
-    {
-        //
-    }
 }
