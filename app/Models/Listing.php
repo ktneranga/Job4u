@@ -11,4 +11,18 @@ class Listing extends Model
 
     protected $table = 'listings';
 
+    public function scopeFilter($query, array $filters) {
+        if(isset($filters['tag'])){
+             return $query->where('tags', 'like', '%'. $filters['tag'] .'%');
+        }
+
+        if(isset($filters['search'])){
+            return $query->where('title', 'like', '%'.$filters['search'].'%')
+                ->orWhere('company', 'like', '%'.$filters['search'].'%')
+                ->orWhere('description', 'like', '%'.$filters['search'].'%')
+                ->orWhere('location', 'like', '%'.$filters['search'].'%');
+        }
+
+    }
+
 }
