@@ -18,3 +18,7 @@ use App\Models\Listing;
 Route::get('/', [ListingController::class, 'index'])->name('listings');
 
 Route::get('/listings/{id}', [ListingController::class, 'show'])->name('listing');
+
+Route::get('/listing/create', [ListingController::class, 'create'])->name('listing.create');
+
+Route::post('/listing/create', [ListingController::class, 'store'])->name('listing.store');

@@ -11,6 +11,8 @@ class Listing extends Model
 
     protected $table = 'listings';
 
+    protected $fillable = ['title', 'company', 'website', 'email', 'location', 'description', 'logo','tags'];
+
     public function scopeFilter($query, array $filters) {
         if(isset($filters['tag'])){
              return $query->where('tags', 'like', '%'. $filters['tag'] .'%');

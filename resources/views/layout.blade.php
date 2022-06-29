@@ -47,8 +47,6 @@
                 </ul>
             </nav>
 
-            @include('partials._hero')
-
             @yield('content')
 
         <footer
