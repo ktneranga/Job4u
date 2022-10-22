@@ -21,6 +21,7 @@
                         type="text"
                         class="border border-gray-200 rounded p-2 w-full"
                         name="company"
+                        value="{{ old('company') }}"
                     />
                     @error('company')
                         <p class="text-red-500 mt-1">{{ $message }}</p>
